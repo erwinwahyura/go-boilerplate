@@ -1,0 +1,35 @@
+definitions:
+  model.BaseResponse:
+    properties:
+      code:
+        type: string
+      data: {}
+      errors:
+        items:
+          type: string
+        type: array
+      message:
+        type: string
+      meta: {}
+      server_time:
+        type: integer
+    type: object
+info:
+  contact: {}
+paths:
+  /healthcheck:
+    get:
+      consumes:
+      - application/json
+      description: Health Check
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.BaseResponse'
+      summary: Health Check
+      tags:
+      - Health
+swagger: "2.0"
